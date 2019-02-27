@@ -1,0 +1,8 @@
+<!--pages/notice/notice.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<!--引入模板-->
+<view class='body'>
+  <!-- 富文本 -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  <!-- body底部 -->
+</view>

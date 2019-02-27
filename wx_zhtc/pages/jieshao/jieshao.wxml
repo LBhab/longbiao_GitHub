@@ -1,0 +1,47 @@
+<!--pages/jieshao/jieshao.wxml-->
+<view class='header'>
+        <text class='open left'>开放时间</text>
+        <text class='place left'>蜀南竹海</text>
+        <text class='date box'>全年</text>
+        <text class='time box'>9:00-17:00</text>
+        <text class='notice left'>*开放时间如有调整会及时以公告形式进行通知</text>
+</view>
+<!-- main -->
+<view class='main'>
+        <text class='open sice'>景区介绍</text>
+        <text class='place'>景区特点</text>
+         <view class='wenben'>
+              誉为竹的海洋、翠甲天下在竹海翻腾的林间漫步,耳边阵阵“竹”涛,悠闲惬意。寻找20度的清凉夏天,感受天然氧吧四季皆宜·春日,新笋遍地,生意盎然;盛夏,嫩竹泻翠,林荫蔽日,瀑飞泉涌,气候爽人;金秋,翠竹摇,绿竹林中,红叶点点;隆冬,林寒涧肃,青枝白雪,相映成趣。
+         </view>
+        <text class='place other'>景点介绍</text>
+          <view class='wenben'>
+             蜀南竹海位于宜宾市境内长宁、江安两县交界之处,北距成都400多公里,以万顷竹海著称。蜀南竹海风景区内有景点124个,分布广。整个景区东西长约13公里,南北宽约6公里,其中一级景点15个,二级景点19个,蜀南竹海素以雄、险、幽、峻、秀闻名,其中天皇寺、天宝寨、仙寓洞、青龙湖、七彩飞瀑、古战场、观云亭、翡翠长廊、茶花山、花溪十三桥等景观被称为“竹海十佳”。蜀南竹海空气清新,纯净,离子含量较高是我国一级环保旅游区。
+         </view>
+         <!-- 图片 -->
+         <view class='image'>
+                    <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+                      <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+         </view>
+             <view class='wenben'>
+             竹海、小桥、流水,竹海漂流,一种能让您在享受完“漫步竹林深处”的意境同时,又能体验一下具有竹海特色的“竹海林中漂流。
+            </view>
+
+         <view class='picture'>
+             <view>
+                  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+             </view>
+             <view>
+                  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+             </view>
+             <view>
+                 <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+             </view>
+             <view>
+                  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545042682428&di=889020702c40d5b1ba961952a64cf776&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Ftravel%2F2016%2F7%2F16%2F20160716134813756ba_550.jpg' alt=''></image>
+             </view>
+         </view>
+          <view class='wenben'>
+             蜀南竹海竹海索道,可观浩瀚竹海,可揽悠悠白云。坐在索道里,就像乘坐一叶小舟,在波涛汹涌的大海里航行,时而直冲云霄,时而滑向谷底。惊险人生的无穷乐趣,尽在其中。乘上楠竹扎的竹筏,荡舟湖心,绿竹倒映,天高云淡,心旷神怡。蜀南竹海漂流后半段水库至终点垂直落差近85米为“刺激漂”,绝对让女人尖叫,让男人狂笑!全程须用时约50至60分钟。
+            </view>
+<!-- 底部 -->
+</view>

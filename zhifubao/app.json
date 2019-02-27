@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/sellticet/sellticet",
+    "pages/notice/notice",
+    "pages/car/car",
+     "pages/orderlist/orderlist",
+     "pages/shouyin/shouyin",
+     "pages/pay_success/pay_success",
+     "pages/refund_details/refund_details",
+     "pages/map/map",
+     "pages/gonggao/gonggao",
+     "pages/returns/returns",
+    "pages/index/index"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  },
+"tabBar": {
+       "selectedColor": "#1195db", 
+       "textColor": "#333",
+       "backgroundColor": "#ffffff",
+      "items": [
+             {
+               "pagePath": "pages/home/home",
+               "name": "首页",
+               "icon": "pages/images/before/my-home.png",
+               "activeIcon": "pages/images/after/my-home.png"
+             },
+               {
+               "pagePath": "pages/sellticet/sellticet",
+               "name": "购票",
+               "icon": "pages/images/before/tic.png",
+               "activeIcon": "pages/images/after/tic.png"
+             }
+             ,  {
+               "pagePath": "pages/orderlist/orderlist",
+               "name": "订单",
+               "icon": "pages/images/before/ren.png",
+               "activeIcon": "pages/images/after/ren.png"
+             }
+      ]
+},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取你的地理位置"
+    }
+  }
+
+
+
+
+
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"订单",
+  "enablePullDownRefresh": true,
+    "onPullDownRefresh": true,
+    "onReachBottom": true
+}

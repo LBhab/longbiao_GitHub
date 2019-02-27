@@ -1,0 +1,54 @@
+{
+  "pages":[
+     "pages/homePage/homePage",
+    "pages/sellTikcet/sellTikcet",
+    "pages/orderList/orderList",
+    "pages/car/car",
+    "pages/shouyin/shouyin",
+    "pages/pay_success/pay_success",
+    "pages/refund_details/refund_details",
+    "pages/notice/notice",
+    "pages/gonggao/gonggao",
+    "pages/map/map",
+    "pages/returns/returns",
+    "pages/jieshao/jieshao",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智慧旅游",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+           "selectedColor":"#1195db",
+        "list":[
+          {
+            "pagePath": "pages/homePage/homePage",
+            "text": "首页",
+            "iconPath": "pages/images/before/my-home.png",
+            "selectedIconPath": "pages/images/after/my-home.png"
+          },
+          {
+            "pagePath": "pages/sellTikcet/sellTikcet",
+            "text": "购票",
+            "iconPath": "pages/images/before/tic.png",
+            "selectedIconPath": "pages/images/after/tic.png"
+          },
+          {
+            "pagePath": "pages/orderList/orderList",
+            "text": "订单",
+            "iconPath": "pages/images/before/ren.png",
+            "selectedIconPath": "pages/images/after/ren.png"
+          }
+      
+        ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您的地址"
+    }
+  }
+
+}

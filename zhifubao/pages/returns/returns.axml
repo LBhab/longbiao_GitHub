@@ -1,0 +1,17 @@
+<view id="page">
+   <!--pages/returns/returns.wxml-->
+<view class='success'>
+     <image class='logo' src='../images/search/pay.png' alt='image'></image>
+      <view>
+          <text class='price'>￥{{price}}</text>
+          <text class='cheng'>申请退款成功!</text>
+      </view>
+      <text class='daol'>将会原路退回支付账户</text> 
+</view>
+<!-- 返回 -->
+
+   <view class='pay_agin' onTap='goHeader'>
+           返回
+  </view>
+  <!-- end -->
+</view>

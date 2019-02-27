@@ -1,0 +1,97 @@
+<!--pages/pay_success/pay_success.wxml-->
+<view class='header'>
+  <view class='header_body'>
+    <text wx:if='{{type==0}}'>支付成功！</text>
+    <!-- 出票失败 -->
+    <text wx:if='{{type==1||type==2 }}'>出票失败！</text>
+    <view class='order_number'>
+      <text>订单号:</text>
+      <text>{{header.orderNo}}</text>
+    </view>
+    <!-- loge -->
+    <image class='logo' src='../images/search/success.png' alt='image'></image>
+    <!-- price -->
+    <view class='price'>
+      <text>￥</text>
+      <text>{{header.totalPrice}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 二维码 成功-->
+<view class='erweima'>
+  <image class='kuang' src='../images/search/kuang.png' alt='加载错误'></image>
+  <text class='usePz'>使用凭证</text>
+  <!-- 付款二维码打印成功 -->
+  <view class='discrible' wx:for='{{body}}' wx:for-item='item' wx:key='index' wx:if='{{type==0}}'>
+    <text>{{item.productName}}</text>
+    <view class='date'>
+      <text>使用日期：</text>
+      <text>{{item.tourTime}}</text>
+    </view>
+    <view class='people'>
+      <text>成人票：×</text>
+      <text>{{item.ticketNum}}</text>
+      <text>张</text>
+    </view>
+    <!-- 景区logo -->
+    <image class='senc' src='../images/search/jingdian.png' alt='加载错误'></image>
+    <!-- 二维码图片 -->
+    <image class='erweima_image' src='{{item.qrCode}}' alt='加载错误' data-img="{{item.qrCode}}" bindtap='ratatoPicture'></image>
+  </view>
+  <!-- 付款二维码打印失败 -->
+  <view class='fali' wx:if='{{type==1}}'>
+    <image class='fali' src='../images/search/fali.png' alt='加载错误'></image>
+    <text class='worning'>出错啦!</text>
+    <view class='wor_tps'>二维码显示失败</view>
+  </view>
+  <!-- 付款二维码打印又失败 -->
+  <view class='fali' wx:if='{{type==2}}'>
+    <image class='fali' src='../images/search/fali.png' alt='加载错误'></image>
+    <text class='worning'>又出错啦!</text>
+    <view class='wor_tps_'>提示:当再试出票失败时，请点击下方 退票按钮提交退款申请。
+    </view>
+  </view>
+</view>
+<!-- 重试出票 -->
+<view class='dianji' wx:if='{{type==1}}'>
+  <view class='pay_agin' bindtap='outpaperAgin'>
+    重试出票
+  </view>
+</view>
+<!-- 去退款 -->
+<view class='dianji' wx:if='{{type==2}}' bindtap='returnMoney'>
+  <view class='pay_agin'>
+    去退款
+  </view>
+</view>
+
+<!-- 温馨提示 -->
+
+<view class='tips'>
+  <view class='tips_body'>
+    <!-- 开始 -->
+    <text class='informations'>温馨提示</text>
+    <view class='text_content'>
+      <view class='left'>
+        <text>入院时间</text>
+      </view>
+      <view class='right'>{{footer.admissionTime}}</view>
+      <view class='left'>
+        <text>开放时间</text>
+      </view>
+      <view class='right'>{{footer.openTime}}</view>
+      <view class='left'>
+        <text>使用方法</text>
+      </view>
+      <view class='right'>{{useMethod}}</view>
+    </view>
+    <!-- 结束 -->
+  </view>
+</view>
+<view class='backheader' bindtap='baclheader'> 首页</view>
+
+<!-- 图片弹出层 -->
+<view class='pictureimg' wx:if="{{imgbool}}" bindtap='hidenimage'>
+  <image class='bigPicture' src="{{imageSrc}}"></image>
+</view>

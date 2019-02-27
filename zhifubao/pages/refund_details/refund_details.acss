@@ -1,0 +1,82 @@
+/* pages/refund_details/refund_details.wxss */
+#page{
+   font-size: 28rpx;
+   background:rgba(244,244,244,1);
+   width: 100%;
+}
+view.header{
+  height:163rpx;
+  background:linear-gradient(90deg,rgba(63,106,223,1),rgba(73,136,224,1),rgba(86,166,225,1));
+  padding-left:2.5%;
+  padding-top:32rpx;
+  position: relative;
+  margin-bottom:56rpx;
+}
+view.header>view{
+  color: #fff;
+}
+text.price{
+  color: red !important;
+}
+view.header>text{
+  font-size: 22rpx !important;
+  color:rgba(198,198,198,1);
+}
+image.return_type{
+  display: block;
+  height:126rpx ;
+  width:126rpx ;
+  position: absolute;
+  top:50%;
+  margin-top:-63rpx;
+  right: 50rpx;
+}
+/* 退款流程 */
+view.process{
+  width: 95%;
+  margin:0 auto;
+  height:244rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx; 
+  padding-top:38rpx;
+}
+view.jingdu{
+/* overflow: hidden; */
+margin-bottom:10rpx;
+height: 122rpx;
+}
+view.jingdu>view{
+  float:left;
+  width: 15%;
+  height: 100%;
+}
+view.text_{
+  width: 70% !important;
+}
+view.picture{
+  margin-left: 5%;
+}
+view.picture>image{
+  display: block;
+  height: 55rpx;
+  width:55rpx;
+  margin:0 auto;
+  margin-top:5%; 
+}
+view.line{
+  width:6rpx;
+  height:60rpx;
+  margin:0 auto;
+}
+/* view.jingdu:last-child>view.picture>.line{
+  background: #fff !important;
+} */
+view.text_>text{
+  display: block;
+  font-size: 30rpx !important;
+  line-height: 70rpx;
+  font-weight:500;
+  
+}
+
+

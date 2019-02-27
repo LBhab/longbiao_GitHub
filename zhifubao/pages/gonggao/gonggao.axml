@@ -1,0 +1,17 @@
+<!--pages/gonggao/gonggao.wxml-->
+<!-- <view id="page"> -->
+   <view class='body'>
+<!-- 底层图片 -->
+   <image class='bgImage' src='../images/search/bg.jpg' alt='search'></image>
+<!-- 中间部分  -->
+   <view class='content'>
+         <text>Tourism Day</text>
+         <text class='tips_'>公告</text>
+         <view class='text_'>
+           <text class='person'>亲爱的用户</text>
+            据了解，从12月初开始，各种圣诞、元旦主题的旅游产品就进入预订高峰，进入下旬消费者开始陆续出发。根据某旅行平台数据显示，2018年最后一个月中，30             日、31日为出游高峰，无论是旅行产品还是单独预订机票酒店，年末几天价格都是高点。从出行人群来看，年轻人出游占比达68%，成为年末旅游消费的绝对主
+             力.
+         </view>
+   </view>
+</view>
+<!-- </view> -->

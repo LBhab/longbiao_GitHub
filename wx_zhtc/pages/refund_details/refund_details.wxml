@@ -1,0 +1,46 @@
+<!--pages/refund_details/refund_details.wxml-->
+<view class='header'>
+  <view>
+    <text>退款金额</text>
+    <text class='price'>￥</text>
+    <text class='price'>{{headerArr.totalPrice}}</text>
+  </view>
+  <text>
+        退回至微信支付账户
+     </text>
+  <!-- 未到账 -->
+  <image wx:if='{{headerArr.refundStatus!=0}}' class='return_type' src='../images/search/lost.png' alt='图片加载失败'></image>
+  <!-- 已到账 -->
+  <image wx:else class='return_type' src='../images/search/get.png' alt='图片加载失败'></image>
+</view>
+
+<!-- 退款流程 -->
+
+<view class='process'>
+  <view class='jingdu'>
+    <view class='picture'>
+      <image wx:if='{{headerArr.refundStatus==0}}' src='../images/search/pr_.png' alt='图片加载失败'></image>
+      <view wx:if='{{headerArr.refundStatus==0}}' class='line' style='background:{{processData[0].end}}'></view>
+      <image wx:if='{{headerArr.refundStatus !=0}}' src='../images/search/pr.png' alt='图片加载失败'></image>
+      <view wx:if='{{headerArr.refundStatus !=0}}' class='line' style='background:{{processData[0].start}}'></view>
+    </view>
+    <view class='text_'>
+      <text wx:if='{{headerArr.refundStatus==0}}' style='color:{{processData[0].end}}'>{{processData[0].name}}</text>
+      <!-- <text wx:if='{{headerArr.refundStatus==0}}' style='color:{{processData[0].end}}'>{{processData[0].date}}</text> -->
+      <text wx:if='{{headerArr.refundStatus !=0}}' style='color:{{processData[0].start}}'>{{processData[0].name}}</text>
+      <!-- <text wx:if='{{headerArr.refundStatus !=0}}' style='color:{{processData[0].start}}'>{{processData[0].date}}</text> -->
+    </view>
+    <!-- er -->
+    <view class='picture'>
+      <image wx:if='{{headerArr.refundStatus==0}}' src='../images/search/pr_.png' alt='图片加载失败'></image>
+      <image wx:if='{{headerArr.refundStatus !=0}}' src='../images/search/pr.png' alt='图片加载失败'></image>
+    </view>
+    <view class='text_'>
+      <text wx:if='{{headerArr.refundStatus==0}}' style='color:{{processData[0].end}}'>{{processData[1].name}}</text>
+      <!-- <text wx:if='{{headerArr.refundStatus==0}}' style='color:{{processData[0].end}}'>{{processData[1].date}}</text> -->
+      <text wx:if='{{headerArr.refundStatus !=0}}' style='color:{{processData[0].start}}'>{{processData[1].name}}</text>
+      <!-- <text wx:if='{{headerArr.refundStatus !=0}}' style='color:{{processData[0].start}}'>{{processData[1].date}}</text> -->
+    </view>
+    <!-- end -->
+  </view>
+</view>

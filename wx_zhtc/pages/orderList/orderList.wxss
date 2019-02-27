@@ -1,0 +1,231 @@
+page {
+  font-size: 30rpx;
+  background: #fff;
+  padding-bottom: 50rpx;
+}
+
+.content {
+  padding: 0 2.5% 0 2.5%;
+}
+
+view.header {
+  height: 200rpx;
+  position: relative;
+  background: #fff;
+}
+
+view.header>image {
+  display: block;
+  height: 136rpx;
+  width: 100%;
+}
+
+view.menu {
+  position: absolute;
+  height: 102rpx;
+  width: 710rpx;
+  left: 50%;
+  bottom: 50rpx;
+  margin-left: -355rpx;
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 3rpx 13rpx 0rpx rgba(63, 106, 223, 0.22);
+  border-radius: 10rpx;
+}
+
+view.menu>view {
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  line-height: 102rpx;
+  font-weight: 500;
+  font-size: 30rpx;
+}
+
+.color {
+  color: rgba(143, 143, 143, 1);
+}
+
+.color_o {
+  color: #3275d9;
+  border-bottom: 4rpx solid #3275d9;
+}
+
+/* 没有支付 */
+
+view.unpay {
+  background: #fff;
+  /* background: blue; *//* padding-top:30rpx; *//* padding-bottom:100rpx; */
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+view.tick_ {
+  /* margin:0 auto; *//* width:95%; */
+  position: relative;
+  padding-top: 40rpx;
+  /* border-bottom:1rpx solid rgba(235,235,235,1); */
+  padding-bottom: 100rpx;
+  margin-bottom: 14rpx;
+}
+
+view.tick_content {
+  position: relative;
+  padding-left: 10%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  background: rgba(250, 250, 250, 1);
+  border-bottom: 1rpx solid rgba(235, 235, 235, 1);
+}
+
+view.tic_infor>text {
+  font-weight: 500;
+  color: rgba(44, 44, 44, 1);
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+  display: block;
+}
+
+view.tic_infor>view {
+  font-weight: 500;
+  color: rgba(165, 165, 165, 1);
+  font-size: 26rpx;
+}
+
+image.logo_ {
+  display: block;
+  height: 40rpx;
+  width: 43rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 20rpx;
+}
+
+view.button {
+  /* height: 1rpx; */
+  border: 0.5rpx solid rgba(235, 235, 235, 1);
+  margin-top: 80rpx;
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+}
+
+/* 待支付 */
+
+view.dai_color {
+  font-weight: 500;
+  color: rgba(251, 72, 24, 1);
+  display: block;
+  position: absolute;
+  right: 45rpx;
+  top: -10rpx;
+}
+
+view.dai_color_o {
+  font-weight: 500;
+  color: rgba(251, 72, 24, 1);
+  display: block;
+  position: absolute;
+  right: 45rpx;
+  top: 20rpx;
+}
+
+/* 单价 */
+
+view.danjia {
+  position: absolute;
+  font-weight: 500;
+  font-size: 26rpx !important;
+  right: 50rpx;
+  top: 30rpx;
+}
+
+/* 合计 */
+
+view.cunt {
+  position: absolute;
+  font-weight: 500;
+  font-size: 26rpx !important;
+  right: 50rpx;
+  bottom: 130rpx;
+}
+
+/* 取消 */
+
+view.quxiao {
+  width: 154rpx;
+  height: 50rpx;
+  border: 1rpx solid rgba(125, 125, 125, 1);
+  border-radius: 5rpx;
+  position: absolute;
+  right: 45rpx;
+  bottom: 23rpx;
+  font-weight: 500;
+  color: rgba(47, 47, 47, 1);
+  font-size: 26rpx !important;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+/* 退款 */
+
+view.tui {
+  width: 154rpx;
+  height: 50rpx;
+  border: 1rpx solid rgba(125, 125, 125, 1);
+  border-radius: 5rpx;
+  position: absolute;
+  right: 220rpx;
+  bottom: 23rpx;
+  font-weight: 500;
+  color: rgba(47, 47, 47, 1);
+  font-size: 26rpx !important;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+/* 刷新支付 */
+
+view.shuaxin {
+  width: 184rpx;
+  height: 50rpx;
+  border: 1rpx solid rgba(125, 125, 125, 1);
+  border-radius: 5rpx;
+  position: absolute;
+  right: 400rpx;
+  bottom: 23rpx;
+  font-weight: 500;
+  color: rgba(47, 47, 47, 1);
+  font-size: 26rpx !important;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+view.returnFail {
+  color: red;
+  position: absolute;
+  bottom: 31rpx;
+  padding-left: 30rpx;
+}
+
+/* 二维码 */
+
+view.red {
+  color: rgba(251, 95, 56, 1);
+  border: 1rpx solid rgba(251, 95, 56, 1);
+}
+
+/* 已经付钱 */
+
+view.payed {
+  position: relative;
+  background: #fff;
+  /* padding-bottom:100rpx; */
+  margin-top: 20rpx;
+  padding-top: 80rpx;
+}
+
+view.tips {
+  color: lightgray;
+  text-align: center;
+}

@@ -1,0 +1,220 @@
+<!--pages/orderList/orderList.wxml-->
+<view class='header'>
+  <image src='../images/search/bg.png' alt='加载失败'></image>
+  <view class='menu'>
+    <view bindtap='select' data-id='0' class='{{type==0 ? "color_o" : "color" }}'>全部</view>
+    <view bindtap='select' data-id='1' class='{{type==1 ? "color_o" : "color" }}'>待付款</view>
+    <view bindtap='select' data-id='2' class='{{type==2 ? "color_o" : "color" }}'>待使用</view>
+    <view bindtap='select' data-id='3' class='{{type==3 ? "color_o" : "color" }}'>退款/售后</view>
+  </view>
+</view>
+<view class="content">
+  <view class='unpay'>
+    <!-- 没有付款 -->
+    <view class='tick_' wx:for='{{unpay}}' wx:for-item='item' wx:key='index'>
+      <view class='tick_content' wx:for='{{item.products}}' wx:for-item='val' wx:key='index'>
+        <view class='tic_infor'>
+          <text>{{val.product_name}}</text>
+          <view>
+            <text>门票种类：</text>
+            <text>{{val.ticket_name}}</text>
+          </view>
+          <view>
+            <text>出行日期：</text>
+            <text>{{val.tour_time}}</text>
+          </view>
+        </view>
+        <!-- 图片logo -->
+        <image class='logo_' src='../images/search/jingdian.png' alt='加载失败'></image>
+        <!-- 单价 -->
+        <view class='danjia'>
+          <text>￥</text>
+          <text>{{val.total_price}}</text>
+        </view>
+      </view>
+      <view class='cunt'>
+        <text>合计：￥</text>
+        <text>{{item.cunt}}</text>
+      </view>
+      <!--按钮状态  -->
+      <view class='button'></view>
+      <!--分割线-->
+      <!-- 刷新支付状态 -->
+      <view wx:if='{{item.orderStatus=="005002"}}' data-orderNo='{{item.orderNo}}' data-id='{{item.scenicId}}' class='shuaxin' bindtap='shuaxin'>
+        刷新支付状态
+      </view>
+      <!-- 取消订单 -->
+      <view class='quxiao' wx:if='{{item.orderStatus=="005002"}}' bindtap='cancelOrder' data-orderNo='{{item.orderNo}}'>
+        取消订单
+      </view>
+      <!-- 重新支付 -->
+      <view wx:if='{{item.orderStatus=="005002"}}' data-orderNo='{{item.orderNo}}' data-id='{{item.scenicId}}' class='tui' bindtap='payagin'>
+        重新支付
+      </view>
+      <!--删除订单-->
+      <view wx:if='{{item.orderStatus=="005003"}}' class='quxiao' bindtap='delet' data-orderNo='{{item.orderNo}}'>
+        删除订单
+      </view>
+      <!-- 订单的状态的状态 -->
+      <view wx:if='{{item.orderStatus=="005003"}}' class='dai_color'>
+        已取消
+      </view>
+      <view wx:if='{{item.orderStatus=="005002" }}' class='dai_color'>
+        待付款
+      </view>
+    </view>
+    <!-- 已经付款(已经游玩了) 可以删除订单 -->
+    <view class='tick_' wx:for='{{payed}}' wx:for-item='item' wx:key='index'>
+      <view class='tick_content' wx:for='{{item.products}}' wx:for-item='val' wx:key='index'>
+        <view class='tic_infor'>
+          <text>{{val.product_name}}</text>
+          <view>
+            <text>门票种类：</text>
+            <text>{{val.ticket_name}}</text>
+          </view>
+          <view>
+            <text>出行日期：</text>
+            <text>{{val.tour_time}}</text>
+          </view>
+        </view>
+        <!-- 图片logo -->
+        <image class='logo_' src='../images/search/jingdian.png' alt='加载失败'></image>
+        <!-- 单价 -->
+        <view class='danjia'>
+          <text>￥</text>
+          <text>{{val.total_price}}</text>
+        </view>
+      </view>
+      <view class='cunt'>
+        <text>合计：￥</text>
+        <text>{{item.cunt}}</text>
+      </view>
+      <!--按钮状态  -->
+      <view class='button'></view>
+      <!--分割线-->
+      <!--删除订单-->
+      <view class='quxiao' bindtap='delet' data-orderNo='{{item.orderNo}}'>
+        删除订单
+      </view>
+      <!-- 订单的状态的状态 -->
+      <view class='dai_color'>
+        交易关闭
+      </view>
+    </view>
+
+    <!-- 已经付款 打印发票成功/失败 -->
+    <view class='tick_' wx:for='{{erweima}}' wx:for-item='item' wx:key='index'>
+      <view class='tick_content' wx:for='{{item.products}}' wx:for-item='val' wx:key='index'>
+        <view class='tic_infor'>
+          <text>{{val.product_name}}</text>
+          <view>
+            <text>门票种类：</text>
+            <text>{{val.ticket_name}}</text>
+          </view>
+          <view>
+            <text>出行日期：</text>
+            <text>{{val.tour_time}}</text>
+          </view>
+        </view>
+        <!-- 图片logo -->
+        <image class='logo_' src='../images/search/jingdian.png' alt='加载失败'></image>
+        <!-- 单价 -->
+        <view class='danjia'>
+          <text>￥</text>
+          <text>{{val.total_price}}</text>
+        </view>
+      </view>
+      <view class='cunt'>
+        <text>合计：￥</text>
+        <text>{{item.cunt}}</text>
+      </view>
+      <!--按钮状态  -->
+      <view class='button'></view>
+      <!--分割线-->
+      <!-- 退款 -->
+      <view class='tui' data-orderNo='{{item.orderNo}}' data-scenicId='{{item.scenicId}}' bindtap='returnMoney'>
+        退款
+      </view>
+      <!-- 查看二维码 -->
+      <view class='quxiao red' wx:if='{{item.ticketStatus != "2"}}' data-orderNo='{{item.orderNo}}' bindtap='checkerweima'>
+        查看二维码
+      </view>
+      <view class='quxiao red' wx:if='{{item.ticketStatus == "2"}}' data-orderNo='{{item.orderNo}}' data-id='{{item.scenicId}}' bindtap='outpaperAgin'>
+        再次出票
+      </view>
+      <!-- 订单的状态的状态 -->
+      <view wx:if='{{item.ticketStatus != "2"}}' class='dai_color'>
+        待使用
+      </view>
+      <view wx:if='{{item.ticketStatus == "2"}}' class='dai_color'>
+        出票失败
+      </view>
+    </view>
+
+
+    <!--退款-->
+    <view class='tick_' wx:for='{{returnmoney}}' wx:for-item='item' wx:key='index'>
+      <view class='tick_content' wx:for='{{item.products}}' wx:for-item='val' wx:key='index'>
+        <view class='tic_infor'>
+          <text>{{val.product_name}}</text>
+          <view>
+            <text>门票种类：</text>
+            <text>{{val.ticket_name}}</text>
+          </view>
+          <view>
+            <text>出行日期：</text>
+            <text>{{val.tour_time}}</text>
+          </view>
+        </view>
+        <!-- 图片logo -->
+        <image class='logo_' src='../images/search/jingdian.png' alt='加载失败'></image>
+        <!-- 单价 -->
+        <view class='danjia'>
+          <text>￥</text>
+          <text>{{val.total_price}}</text>
+        </view>
+      </view>
+      <view class='cunt'>
+        <text>合计：￥</text>
+        <text>{{item.cunt}}</text>
+      </view>
+      <!--按钮状态  -->
+      <view class='button'></view>
+      <!--分割线-->
+      <!-- 退款 -->
+      <!--退失败的-->
+      <view class='tui' data-orderNo='{{item.orderNo}}' data-scenicId='{{item.scenicId}}' wx:if='{{item.refundStatus == "1"}}' bindtap='returnSuccess'>
+        退款详情
+      </view>
+      <!--退款成功的-->
+      <view class='quxiao 1' wx:if='{{item.refundStatus == "0"}}' data-orderNo='{{item.orderNo}}' bindtap='returnSuccess'>
+        退款详情
+      </view>
+      <!-- 查看二维码 -->
+      <view class='quxiao red' wx:if='{{item.refundStatus == "1"}}' data-orderNo='{{item.orderNo}}' bindtap='canlereturnmoney'>
+        取消退款
+      </view>
+      <!-- 退款失败的时候 联系客服-->
+      <view wx:if='{{item.refundStatus == "2"}}' class='returnFail' bindtap='callPhone'>
+        请联系客服：028-61111130
+      </view>
+      <!-- 订单的状态的状态 -->
+      <view wx:if='{{item.refundStatus == "1"}}' class='dai_color'>
+        处理中
+      </view>
+      <view wx:if='{{item.refundStatus == "2"}}' class='dai_color'>
+        退款失败
+      </view>
+      <view wx:if='{{item.refundStatus == "0"}}' class='dai_color'>
+        退款成功
+      </view>
+      <!-- <view wx:if='{{item.refundStatus == "3"}}' class='dai_color'>
+                已经取消退款
+               </view>  -->
+    </view>
+  </view>
+  <!-- 空值提示 -->
+  <view wx:if='{{datanumder == 0}}' class='tips'>
+    没有记录哟
+  </view>
+</view>

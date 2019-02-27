@@ -1,0 +1,13 @@
+<view id="page">
+  <!--pages/map/map.wxml-->
+<!-- <map  class='map'  show-location='true' latitude='30.273923' scale='120.12703' onRegionchange='regionchange' longitude='{{longitude}}' markers='{{markers}}' polyline='{{polyline}}' include-points='{{markers}}'>
+<cover-view class='add' onTap="controltap" data-id='1'>
+  <cover-image class='image' src='../images/search/jia.png'></cover-image>
+</cover-view>
+<cover-view class='prve' ontap="controltap" data-id='0'>
+   <cover-image class='image' src='../images/search/jian.png'></cover-image>
+</cover-view>
+</map> -->
+ <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+  <!-- end -->
+</view>

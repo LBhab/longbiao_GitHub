@@ -1,0 +1,57 @@
+/* pages/gonggao/gonggao.wxss */
+
+/* 父级框架 */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+view.body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+image.bgImage {
+  height: 100%;
+  width: 100%;
+}
+
+view.content {
+  position: absolute;
+  width: 620rpx;
+  left: 50%;
+  margin-left: -310rpx;
+  top: 220rpx;
+}
+
+view.content>text {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+view.content>text:first-child {
+  color: rgba(127, 127, 127, 1);
+  font-size: 36rpx;
+}
+
+text.tips_ {
+  color: rgba(61, 61, 61, 1);
+  -webkit-text-stroke: 1px undefined;
+  text-stroke: 1px undefined;
+  font-size: 56rpx !important;
+  /* font-weight: bold; */
+}
+
+view.text_ {
+  font-weight: bold;
+  color: rgba(80, 80, 80, 1);
+  font-size: 36rpx !important;
+}
+
+text.person {
+  display: block;
+  margin: 26rpx 0;
+}

@@ -1,0 +1,316 @@
+view#page{
+     background: rgba(246,246,246,1);
+     padding-bottom: 100rpx;
+     font-size: 28rpx;
+     width:100%;     
+
+}
+/* logo修饰 */
+view.logo{
+background: #fff;
+
+position: relative;
+}
+text.adress_name{
+font-size:36rpx;
+font-family:PingFang-SC-Bold;
+font-weight:bold;
+color:rgba(254,254,254,1);
+display: block;
+position: absolute;
+top: 256rpx;
+left: 28rpx;
+z-index: 22;
+}
+.slide-image{
+   display: block;
+   height: 100%;
+   width: 100%;
+}
+.lunbo{
+   width: 100%;
+   height: 380rpx;
+}
+view.logo_s{
+  margin: 0 aoto;
+  padding-left:40rpx;
+  position: relative;
+}
+view.discrible{
+  border-bottom:1rpx solid rgba(235,235,235,1);
+  height: 100rpx;
+  padding-bottom: 20rpx;
+}
+view.discrible>text{
+       display: block;
+}
+view.discrible>text:first-child{
+  font-weight:600;
+  color:rgba(73,73,73,1); 
+  font-size: 30rpx;
+  margin: 20rpx 0rpx;
+}
+
+view.discrible>text.time{
+    color:rgba(181,181,181,1);
+     margin: 20rpx 0rpx;
+}
+view.logo_s>image.jinru{
+  display: block;
+  position: absolute;
+  height: 30rpx;
+  width: 30rpx;
+  right:20rpx;
+  top:50%;
+  margin-top:-15rpx;
+}
+view.logo_s>image.weizhi{
+  display: block;
+  position: absolute;
+  height: 34rpx;
+  width: 34rpx;
+  left:36rpx;
+  top:50%;
+  margin-top:-17rpx;
+}
+view.address{
+  line-height: 40rpx;
+  margin-bottom:20rpx; 
+}
+view.address>text{
+    font-weight:600;
+  color:rgba(73,73,73,1); 
+  font-size: 24rpx;
+  margin-left:40rpx;
+  line-height: 100rpx;
+}
+/* 常用票种 */
+view.tekick{
+  background: #fff;
+  margin-bottom:20rpx;
+}
+view.always_tekick{
+    width:90%;
+    margin:0 auto;
+}
+text.title{
+    font-weight:600;
+    color:rgba(73,73,73,1); 
+    font-size: 30rpx;
+    padding: 20rpx 0rpx;
+    display: block;
+}
+view.xiangq{
+   border-top:1rpx solid rgba(235,235,235,1);
+   position: relative;
+   padding: 37rpx 0rpx;
+}
+/* 修饰 */
+view.main{
+  overflow: hidden;
+}
+view.main>view{
+ float: left;
+  width:10%;
+}
+view.main>view:last-child{
+  width:90%;
+}
+.boxInput{
+   margin-top: 50rpx; 
+  }
+  /* 重写复选框样式 */
+  /* checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 50rpx;
+   height: 50rpx;
+} */
+
+/**手动写复选框***/
+view.kuang{
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid lightgray;
+  border-radius: 50%;
+  margin-top:70%;
+
+}
+view.kuang_o{
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid lightgray;
+  background: lightgray;
+  border-radius: 50%;
+  margin-top:70%;
+
+}
+view.kuang>image{
+  height: 100%;
+  width: 100%;
+}
+text.miaoshu{
+     display: block;
+     font-size: 24rpx;
+     margin: 10rpx 0;
+}
+text.miaoshu:nth-child(1){
+  font-weight: bold;
+  font-size: 30rpx;
+}
+text.miaoshu:nth-child(2){
+   color:rgba(89,89,89,0.4);
+  font-weight: 500;
+}
+text.miaoshu:nth-child(3){
+   color: #58A9FE;
+}
+view.jiage{
+   position: absolute;
+  bottom:20rpx;
+  right: 26rpx;
+}
+text.rmb{
+ color:red;
+}
+text.money{
+   font-size:36rpx;
+}
+text.small{
+  color:lightgray;
+}
+view.know{
+  position: absolute;
+  top:40rpx;
+  right: 0rpx;
+  width:150rpx;
+}
+view.know>text{
+  color:rgba(171,170,170,1);
+  font-weight: 500;
+  font-size: 26rpx;
+}
+view.know>image{
+  height: 24rpx;
+  width:24rpx;
+  margin-left:10rpx;
+}
+/* 余下的票类 */
+
+view.tick_tp{
+   background: #fff;
+    position: relative;
+    margin-bottom:20rpx;
+}
+/* 没点击之前 */
+view.tickt_body{
+    padding-left:-5%; 
+    height: 100rpx;
+    margin: 0 auto;
+     overflow: hidden;
+     transition:all 2s;
+}
+
+/* 点击之后 */
+view.tickt_body_o{
+    margin: 0 auto;
+    padding-left:-5%; 
+    transition:all 2s;
+}
+
+view.next_tick{
+  position: relative;
+  border-bottom: 1rpx solid lightgrey;
+}
+view.next_tick_son{
+  overflow: hidden;
+  width: 100% !important;
+}
+view.next_tick_son>view{
+  float: left;
+  width:5%;
+  margin-left: 5%;
+}
+view.check-box{
+  width: 34rpx;
+  height: 52rpx;
+  /* background: red; */
+}
+view.next_tick_son>view:last-child{
+  width:80%;
+}
+view.tick_tp_name{
+ line-height:100rpx;
+  height: 100rpx;
+  font-weight: bold;
+
+}
+view.tick_tp_name>view:first-child{
+  float:left;
+  padding-left: 5%;
+}
+view.tick_tp_name>view:last-child{
+  float:right;
+  margin-right:100rpx; 
+}
+view.t_son{
+   background: rgba(246,246,246,1);
+
+}
+/* 点击之前 */
+image.dianji{
+  position: absolute;
+  display: block;
+  right: 40rpx;
+  top:25rpx;
+  height:50rpx;
+  width:50rpx;
+}
+/* 点击之后 */
+image.dianji_o{
+  position: absolute;
+  display: block;
+  right: 40rpx;
+  top:25rpx;
+  height:50rpx;
+  width:50rpx;
+  transform: rotate(-180deg)
+}
+/* 底部 */
+view.bottom_bar{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0rpx;
+  bottom:0rpx;
+  background: #fff;
+}
+view.bottom_bar>view{
+  float: left;
+  width: 50%;
+  height:100%;
+  text-align: center;
+line-height: 100rpx;
+}
+view.go_buy{
+    background:linear-gradient(90deg,rgba(85,164,225,1) 0%,rgba(63,106,223,1) 100%);
+    font-size: 36rpx;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+   
+}
+button.bottom{
+   background:linear-gradient(90deg,rgba(85,164,225,1) 0%,rgba(63,106,223,1) 100%);
+    font-size: 36rpx;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    border:none;
+     height: 100%;
+    width: 100%;
+}
+view.cunt{
+    font-size: 30rpx;
+    font-weight:bold;
+  }
+  view.cunt>text:nth-child(2){
+    color: #0274EC;
+  }

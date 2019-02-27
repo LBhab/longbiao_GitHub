@@ -1,0 +1,48 @@
+<view id="page">
+     <view class='header' a:if='{{headerType==0}}'>
+      <text>剩余支付时间 </text>
+      <image src='../images/search/shizhong.png' alt='image'></image>
+      <view>
+        <text>{{hours}}:{{mintes}}:{{sencends}}</text>
+      </view>
+</view>
+
+<!-- 信息展示 -->
+
+  <view class='dingdan' a:for='{{datalist}}' a:key='index' a:for-item='item'>
+       <view class='dingdan_body'>
+             <view class='content'>
+                  <view class='scen_name' a:for='{{item.name}}' a:for-item='value' a:key="index">
+                      <text  a:key='index' >{{value}}</text>
+                  </view>
+                  <view>
+                       <text>入院时间:</text>
+                       <text>{{item.time}}</text>
+                  </view>
+                  <view>
+                        <text>有效期:</text>
+                        <text>{{item.date}}当日有效</text>
+                  </view>
+             </view>
+             <!-- 景点logo -->
+               <image class='logo_title' src='../images/search/jingdian.png' alt='image'></image>
+             <!-- 价格 -->
+                <view class='money'><text>￥</text><text>{{item.price}}</text></view>
+             <!-- 返回 -->
+                <!-- <view class='back'>
+                    <image class='back_home' src='../images/search/dayuhao.png' alt='image'></image>
+                </view>  -->
+       </view>
+</view>
+<!-- 再次支付 -->
+    <view class='button'>
+            <view  a:if="{{payTpye==0}}"  class='pay_agin' onTap='gochengg'>
+                 再次支付
+            </view>
+              <!--查看二维码-->
+            <view a:if="{{payTpye==1}}"  class='pay_agin' onTap='chekpicture'>
+                   查看二维码
+            </view>
+    </view>
+
+</view>

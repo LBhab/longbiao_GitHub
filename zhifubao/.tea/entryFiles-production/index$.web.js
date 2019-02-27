@@ -1,0 +1,13 @@
+require('@alipay/appx-compiler/lib/sjsEnvInit');
+require('./config$');
+require('../../pages/home/home');
+require('../../pages/sellticet/sellticet');
+require('../../pages/notice/notice');
+require('../../pages/car/car');
+require('../../pages/orderlist/orderlist');
+require('../../pages/shouyin/shouyin');
+require('../../pages/pay_success/pay_success');
+require('../../pages/refund_details/refund_details');
+require('../../pages/map/map');
+require('../../pages/gonggao/gonggao');
+require('../../pages/index/index');

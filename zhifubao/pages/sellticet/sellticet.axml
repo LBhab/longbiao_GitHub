@@ -1,0 +1,138 @@
+<view id="page">
+  <!-- logo 景点介绍-->
+<view class='logo' a:for='{{scenicInfo}}' a:for-item='item' a:key='index'> 
+      <text class='adress_name'>{{item.scenicName}}</text>
+      <!-- 图片轮播 -->
+      <swiper class='lunbo' indicator-dots="false" autoplay="true" interval="3000" duration="1000">
+    <block a:for="{{item.pics}}" a:for-item='val' a:key='index'>
+      <swiper-item>
+        <image src="{{val}}" class="slide-image" alt='正在加载' />
+      </swiper-item>
+    </block>
+  </swiper>
+     <view class='discrible logo_s' onTap='goJieshao'>
+     <text>景点介绍</text>
+      <text class='time'>景点开放时间：{{item.startTime}}-{{item.closeTime}}</text>
+      <!-- <image class='jinru' src='../images/search/dayuhao.png'></image> -->
+     </view>
+     <view class='address logo_s' onTap='goMap' data-map='{{item.address}}'>
+     <image class='weizhi' src='../images/search/weizhi.png'></image>
+     <image class='jinru' src='../images/search/dayuhao.png'></image>
+      <!-- <text>{{item.address}}</text> -->
+      <text>查找景区地图</text>
+     </view>
+</view>
+<view class='tekick'>
+<!-- 常用票种 -->
+    <view class='always_tekick'>
+        <text class='title'>常用票种</text>
+        <view class='xiangq' a:for='{{usualProductArray}}' a:for-item='item' a:key='index' data-parmas='111111'>
+            <view class='main'>
+                <view>
+                   <!-- 复选框 -->
+                     <view class='check-box'>
+                         <view class='kuang kuang_o2' id='{{index}}' a:if='{{item.disabled == false}}' onTap='usuallyTickt' data-productName='{{item.productName}}' data-bool='{{item.checked}}'>
+                               <image a:if='{{item.checked==true}}' src='../images/search/zq.png' alt='图片加载失败'></image>
+                          </view>
+                          <!--禁止操作-->
+                          <view class='kuang_o'  a:if='{{item.disabled == true}}'></view>
+                     </view>
+                </view>
+                <view>
+                     <text  class='miaoshu'>{{item.productName}}</text>
+                     <text  class='miaoshu'>{{item.termName}}</text>
+                     <text  class='miaoshu'>{{item.label}}</text>
+                </view>
+            </view>
+             <!-- 价格 -->
+              <view class='jiage'>
+                 <text class='rmb'>￥</text><text class='rmb money'>{{item.settlementPrice}}</text><text class='small'>起</text>
+              </view>
+            <!-- 购票须知 -->
+            <view class='know'>
+                  <text onTap='goNotice' data-notice='{{item.instructions}}'>购票须知</text>
+                  <image src='../images/search/dayuhao.png'></image>
+            </view>
+            <!-- 内容结束 -->
+        </view>  
+    </view>
+</view>
+
+<!-- 票类 -->
+<view class='tick_tp'  a:for='{{scenicPortProductArray}}' a:for-item='item' a:key='key' id='{{index}}'>
+    <view class='{{index==type ? "tickt_body_o" : "tickt_body"}}'>
+       <!-- 开始 -->
+       <view class='tick_tp_name'>
+        <view>
+              <text>{{item.scenicPortName}}</text>
+        </view>
+        <view>
+             <text class='rmb'>￥</text><text class='rmb money'>{{item.scenicPortPrice}}</text><text class='small'>起</text>
+        </view>
+     </view>
+      <!-- 子类 -->
+     <view class='t_son' a:for='{{item.products}}' a:for-item='val' a:for-index='prodcutindex'     a:key='index' id='{{index}}'>
+         <view class='next_tick'>
+            <view class='next_tick_son'>
+               <!--中间内容  -->
+                     <view>
+                    <!-- 复选框 -->
+                            <view class='check-box'>
+                               <view a:if='{{val.disabled==false}}' class='kuang' id='{{index}}' catchTap='scensicTickt' a:for-index = 'index' data-index='{{prodcutindex}}' data-productName='{{val.productName}}' data-bool='{{val.checked}}'>
+                               <image  a:if='{{val.checked==true}}' src='../images/search/zq.png' alt='图片加载失败'></image>
+                               </view>
+                               <!--禁止操作-->
+                          <view class='kuang_o'  a:if='{{val.disabled == true}}'></view>
+                            </view>
+                      </view>
+                 <view >
+                      <text  class='miaoshu'>{{val.productName}}</text>
+                      <text  class='miaoshu'>{{val.termName}}</text>
+                      <text  class='miaoshu'>{{val.label}}</text>
+                 </view>
+                    </view>
+               <!-- 价格 -->
+            <view class='jiage'>
+                 <text class='rmb'>￥</text><text class='rmb money'>{{val.settlementPrice}}</text><text class='small'>起</text>
+              </view>
+            <view class='know'>
+                  <text catchTap='goNotice' data-notice='{{val.instructions}}'>购票须知</text>
+                  <image src='../images/search/dayuhao.png'></image>
+            </view>
+        </view>
+      </view>
+     <!-- 点击下拉 -->
+          <image class='{{index==type ? "dianji_o" : "dianji"}}' id='{{index}}'    src='../images/search/xiala.png'  data-index='{{index}}'   onTap='getSon'></image>
+     <!-- 结束 -->
+       </view> 
+       
+</view>
+<!-- 底部价格 -->
+<view class='bottom_bar'>
+    <view class='cunt'>
+       <text>合计：</text>
+       <text>{{num}}</text>
+       <text>种票</text>
+    </view>
+    <view class='go_buy'>
+       <!-- <text>去购买</text> -->
+   <!--<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        去购买
+    </button>-->
+    <view  class='bottom' onTap="bindGetUserInfo">去购买</view>
+
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+  <!--end -->
+</view>

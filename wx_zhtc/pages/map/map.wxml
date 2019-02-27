@@ -1,0 +1,9 @@
+<!--pages/map/map.wxml-->
+<map class='map' show-location='true' latitude='{{latitude}}' scale='{{scale}}' longitude='{{longitude}}' markers='{{markers}}' polyline='{{polyline}}' include-points='{{markers}}'>
+  <!-- <cover-view class='add' bindtap="controltap" data-id='1'>
+  <cover-image class='image' src='../images/search/jia.png'></cover-image>
+</cover-view>
+<cover-view class='prve' bindtap="controltap" data-id='0'>
+   <cover-image class='image' src='../images/search/jian.png'></cover-image>
+</cover-view> -->
+</map>

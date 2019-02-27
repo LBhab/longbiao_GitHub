@@ -1,0 +1,64 @@
+#page{
+       width: 100% !important;
+   background:rgba(244,244,244,1);
+  padding-top: 100rpx;
+}
+/* pages/returns/returns.wxss */
+
+view.success{
+    /* width: 698rpx; */
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 60rpx;
+    /* margin-top:34rpx; */
+    /* margin-bottom:34rpx;  */
+    background: #fff;
+    padding-top: 100rpx;
+}
+image.logo{
+  display: block;
+  height: 196rpx;
+  width: 256rpx;
+  margin: 0 220rpx 100rpx 220rpx;
+}
+
+view.success>view{
+  width: 400rpx;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 44rpx;
+  text-align: center;
+}
+
+text.price{
+  color: #FB4818;
+}
+text.cheng{
+  color: #5A98F4;
+}
+text.daol{
+  font-weight:bold;
+color:rgba(163,162,162,1);
+font-size: 28rpx;
+text-align: center;
+display: block;
+margin-top:33rpx;
+}
+
+/* 返回 */
+view.pay_agin{
+  position: absolute;
+  height:90rpx;
+  background:linear-gradient(90deg,rgba(63,106,223,1),rgba(73,136,224,1),rgba(86,166,225,1));
+  border-radius:40rpx;
+  line-height: 90rpx;
+  font-weight:500;
+   color:rgba(255,255,255,1);
+   font-size: 36rpx;
+   text-align: center;
+   width:658rpx;
+   bottom: 400rpx;
+   left: 50%;
+   margin-left:-329rpx;
+   box-shadow: 0rpx 15rpx 30rpx 1rpx rgba(86,166,225,1);
+}

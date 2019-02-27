@@ -1,0 +1,77 @@
+<!--pages/homePage/homePage.wxml-->
+ <import src="../../wxParse/wxParse.axml" />
+<!-- logo -->
+<view id="page">
+      <!-- box -->
+  <view class="logo">
+       <image class="logo_picture" src="{{imgUrl}}" alt='图片加载失败' ><image/>
+  </view>
+  <!-- 中间部分 -->
+     <!-- 提示 -->
+  <view class="body">
+     <image class='bolang' src='../images/search/log_.png' alt='search'></image>
+      <view class='travle_header'>
+           <!-- 轮播 -->
+        <swiper
+              indicator-dots="{{false}}"
+              autoplay="true"
+              interval="2000"
+              vertical="true" 
+              circular="true"
+            >
+              <block a:for="{{logo_text}}" a:for-index="index" a:key="index">
+                <swiper-item>
+                  <navigator url="../gonggao/gonggao" open-type="navigate" class="daohang"><!--去的地方-->
+                  <view class="text_content">{{item.text}}</view>
+                  </navigator>
+                </swiper-item>
+              </block>
+            </swiper>
+          <view class='son_one '>
+          <image class='tishi' src='../images/search/tips.png' alt='图片加载失败'></image>
+          <image class='dayuh' src='../images/search/dayuhao.png' alt='图片加载失败'></image>
+          <view>
+  </view>
+<!-- 视频 -->
+      <view class='movies'>
+          <view class='movie_logo'>
+              视频介绍 
+              <view class='movie_logo_left'>
+                  <image  src='../images/search/headerL.png' alt='图片加载失败'></image>
+              </view>
+              <view class='movie_logo_right'>
+                  <image src='../images/search/headerR.png' alt='图片加载失败'></image>
+              </view>
+          </view>
+          <text class='follow'>带你了解{{scenicName}}</text>
+            <!-- svideo -->
+            <view class='video'>
+               <video src='{{video}}'></video>
+            </view>
+     </view>
+
+<!-- 热门话题 -->
+ <view class='hot_chat'>
+    <view class='movie_logo'>
+             景点介绍
+              <view class='movie_logo_left'>
+                  <image  src='../images/search/headerL.png' alt='图片加载失败'></image>
+              </view>
+              <view class='movie_logo_right'>
+                  <image src='../images/search/headerR.png' alt='图片加载失败'></image>
+              </view>
+     </view>
+          <text class='follow'>带你了解{{scenicName}}</text>
+          <!-- 图片文字 -->
+          <view class='pic_text'>
+               <view class='pic_text_son'>
+                         <template is="wxParse"  data="{{wxParseData:article.nodes}}" />
+               </view>
+          </view>
+ </view>
+</view>
+
+
+
+
+

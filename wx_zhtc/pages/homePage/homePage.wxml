@@ -1,0 +1,80 @@
+<!--pages/homePage/homePage.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<!--引入模板-->
+<!-- logo -->
+<view class='logo'>
+  <view class='image'>
+    <image src='{{imgUrl}}' alt='logo'></image>
+  </view>
+  <!-- <input type='text' placeholder='关键字'></input> -->
+  <!-- <image src='../images/search/search.png' alt='search'></image> -->
+</view>
+<!-- 底部灰色面板 -->
+<view class='bg_gray'>
+  <!-- 波浪线图 -->
+  <image class='bolang' src='../images/search/log_.png' alt='search'></image>
+  <view class='up_son'>
+    <view class='travle'>
+      <!-- 旅行头条 -->
+      <view class='travle_header'>
+        <view class='son_one '>
+          <image class='tishi' src='../images/search/tips.png' alt='图片加载失败'></image>
+          <image class='dayuh' src='../images/search/dayuhao.png' alt='图片加载失败'></image>
+          <view>
+            <!-- 站位 -->
+          </view>
+        </view>
+        <view class='son_one  son_two'>
+          <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+            <block wx:for="{{logo_text}}" wx:for-item='item' wx:key='index'>
+              <navigator url="../gonggao/gonggao" open-type="navigate">
+                <!-- 去的页面-->
+                <swiper-item>
+                  <view class="swiper_item">{{item.text}}</view>
+                </swiper-item>
+              </navigator>
+            </block>
+          </swiper>
+          <!-- <text>梦幻川西之旅/毕棚沟-西岭雪山-成都</text> -->
+        </view>
+      </view>
+    </view>
+    <!-- 视频介绍 -->
+    <view class='movies'>
+      <view class='movie_logo'>
+        视频介绍
+        <view class='movie_logo_left'>
+          <image src='../images/search/headerL.png' alt='图片加载失败'></image>
+        </view>
+        <view class='movie_logo_right'>
+          <image src='../images/search/headerR.png' alt='图片加载失败'></image>
+        </view>
+      </view>
+      <text class='follow'>带你了解{{scenicName}}</text>
+      <!-- svideo -->
+      <view class='video'>
+        <video src='{{video}}'></video>
+      </view>
+    </view>
+    <!-- 上一层底部 -->
+  </view>
+</view>
+<!-- 热门话题 -->
+<view class='hot_chat'>
+  <view class='movie_logo'>
+    景点介绍
+    <view class='movie_logo_left'>
+      <image src='../images/search/headerL.png' alt='图片加载失败'></image>
+    </view>
+    <view class='movie_logo_right'>
+      <image src='../images/search/headerR.png' alt='图片加载失败'></image>
+    </view>
+  </view>
+  <text class='follow'>带你了解{{scenicName}}</text>
+  <!-- 图片文字 -->
+  <view class='pic_text'>
+    <view class='pic_text_son'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>

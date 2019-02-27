@@ -1,0 +1,169 @@
+<view id="page">
+   <view class='body'>
+<!-- body开始 -->
+    <!-- 票类展示 -->
+     <view class='tick_type'>
+          <view class='tick_type_name' a:for='{{tic_p}}' a:for-item='item' a:key='index'>
+               <view class='xianshi'>
+                   <text class='name'>{{item.name}}</text>
+                   <text>有效期:</text><text>{{item.gun}}</text>
+               </view>
+              <view class='ned_konw'>
+                   <text onTap='goNotice' data-notice='{{item.notice}}'>购票须知</text>
+                   <image src='../images/search/dayuhao_.png' alt='image'>
+                   </image>
+              </view>
+          </view> 
+     </view>
+    <!-- 使用时期 -->
+     <view class='date'>
+          <view class='date_body'>
+               <text>使用时期</text>
+               <!-- 今天 -->
+                <view class='date_body_son' onTap='selectTime' data-id='1' data-time='{{today_o}}'>
+                     <text class='time'>今天{{today}}</text>
+                     <text class='money'>{{isBuy}}</text>
+                     <image a:if='{{pictureSelect==1}}' class='isSelect' src='../images/search/select.png' alt='image'></image>
+                </view>
+                <!-- 明天 -->
+                <view class='date_body_son tomorrow'  onTap='selectTime' data-id='2' data-time='{{tomorrow_o}}'>
+                     <text class='time'>明天{{tomorrow}}</text>
+                     <text class='money'>可订</text>
+                     <image a:if='{{pictureSelect==2}}' class='isSelect' src='../images/search/select.png' alt='image'></image>
+                </view>
+                <!-- 后天 -->
+                <view class='date_body_son afterTomorrow'  onTap='selectTime' data-id='3' data-time='{{afterTomorrow_o}}'>
+                     <text class='time'>后天{{afterTomorrow}}</text>
+                     <text class='money'>可订</text>
+                     <image a:if='{{pictureSelect==3}}' class='isSelect' src='../images/search/select.png' alt='image'></image>
+                </view>
+                <!-- 更多 -->
+                <view class='date_body_son more'>
+                       <!-- 时间选择器 -->
+                      <!-- <picker mode="date" value="{{date1}}"   start='{{today_o}}' end="2190-1-30"> -->
+                        <view class="form_group" onTap="onDateChange">
+                            <text  class='time'>{{datetime}}</text> 
+                             <text class='money'>可订</text>
+                        </view>
+                      <!-- </picker> -->
+                      <image a:if='{{pictureSelect==4}}' class='isSelect' src='../images/search/select.png' alt='image'></image>
+                     <image class='dayu' a:else  src='../images/search/dayuhao_.png' alt='image'></image>
+                </view>
+          </view>
+     </view>
+<!-- 票类 -->
+     <view class='zhonglei'> 
+          <view class='wai' a:for='{{tic_num}}' a:for-item='item' a:key='index'>
+                <view class='zhonglei_body'>
+                 <view class='zhonglei_body_one'>
+                     <view>{{item.name}}</view>
+                     <view>￥{{item.settlementPrice}}</view>
+                 </view> 
+                 <view class='zhonglei_body_two'>
+                     <view onTap='goNotice' data-notice='{{item.notice}}'>
+                          购票须知
+                          <image class='needkonw' src='../images/search/dayuhao_.png' alt='image'></image>
+                     </view>
+                          <view class='jisuan'>
+                                <view class='jian' onTap='getJianPrice'  data-price='{{item.price}}' data-id='{{index}}'>-</view>
+                                <view  class='number'>{{item.ticketNum}}</view>
+                                <view class='add' onTap='getAddPrice'    data-price='{{item.price}}' data-id='{{index}}'>+</view>
+                          </view> 
+                 </view> 
+          </view>
+          </view>
+     </view>
+<!-- 填写信息 -->
+  <view class='informations'>
+       <view class='informations_body'>
+           <!-- 取票信息 -->
+           <view class='xinxi'>
+                <text class='tips'>请填写个人信息</text>
+                <!-- <text class='needwrite'>需要填写</text> -->
+                <!-- <text class='people'>1个</text> -->
+                <!-- <text class='needwrite'>出行人</text> -->
+           </view> 
+           <!-- form表单 -->
+           <view class='form'>
+                    <!-- 名字 -->
+                  <view class='input inputname'>
+                        <view>中文姓名</view>
+                        <view>
+                           <input type='text'  onInput='write'  value='{{realName}}' placeholder='输入姓名'></input>
+                        </view>
+                  </view> 
+                    <!-- 手机 -->
+                  <view class='input inputphone'>
+                        <view>手机号码</view>
+                        <view >
+                            <input type='number' maxlength='11' onBlur='queryphonenumber' placeholder='输入手机号（必填）' value='{{phone}}'></input>
+                         </view>
+                         <!-- 获取授权手机号 -->
+                              <!-- <button a:if='{{phoneButton==false}}' class='queryphone' open-type="getPhoneNumber" ongetphonenumber="getPhoneNumber">获取手机号</button> -->
+                  </view> 
+                      <!-- 身份证 -->
+                  <view class='input inputid'>
+                        <view>身份证号码</view>
+                        <view>
+                            <input type='number' maxlength='19' onBlur="writeidcard"  placeholder='请正确输入，可用于验票'  value='{{idCard}}'></input>
+                        </view>
+                  </view> 
+           </view>
+       </view>
+  </view>
+<!-- body结束 -->
+</view>
+
+<!-- 重写时间选择 -->
+  <view class='timeSelectBox' a:if="{{timeBox==true}}">
+  
+   <view class="canlendarBgView">
+                      <!-- 确定 取消 -->
+                    <view class='clickButton'>
+                         <view class='chosedate'>请选择日期</view>
+                         <text class='no' data-click='no' onTap='timeDisaper'>取消</text>
+                         <text class='ok' data-click='ok' onTap='timeDisaper'>确定</text>
+                    </view>  
+                            <view class="canlendarView">
+                              <view class="canlendarTopView">
+                                <view class="leftBgView" onTap="handleCalendar" data-handle="prev">
+                                  <view class="leftView">《</view>
+                                </view>
+                                <view class="centerView">{{cur_year || "-"}} 年 {{cur_month || "-"}} 月</view>
+                                <view class="rightBgView" onTap="handleCalendar" data-handle="next">
+                                  <view class="rightView">》</view>
+                                </view>
+                              </view>
+                              <view class="weekBgView">
+                                <view class="weekView" a:for="{{weeks_ch}}" a:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+                              </view>
+                              <view class="dateBgView">
+                                <view a:if="{{hasEmptyGrid}}" class="dateEmptyView" a:for="{{empytGrids}}" a:key="{{index}}" data-idx="{{index}}">
+                                </view>
+                                <view class="dateView" a:for="{{days}}" a:key="{{index}}">
+                                    <!-- 可定不可定 -->
+                                  <view a:if="{{item.bool==true}}" style='position:absolute;top:-35rpx;left:38rpx;color:#000;font-size:18rpx;'>可定</view>
+                                  <view a:if="{{item.bool==false}}" style='position:absolute;top:-35rpx;left:30rpx;color:lightgray;font-size:18rpx;'>不可定</view>
+                                  <view a:if="{{item.bool==true}}" class="datesView {{index == todayIndex ? 'dateSelectView' : ''}}"  data-idx="{{index}}" onTap="dateSelectAction">{{item.days}}</view>
+                                  <!-- 当日之后 -->
+                                  <view a:if="{{item.bool==false}}" class="datesView dateSelectView_o">{{item.days}}</view>
+                                </view>
+                              </view>
+                            </view>
+                            <!-- <view>点击日期选择</view> -->
+              </view>
+  <!-- end -->
+  </view>
+
+<!-- 底部价格 -->
+<view class='bottom_bar'>
+    <view class='cunt'>
+       <text>￥</text>
+       <text>{{cunt}}</text>
+    </view>
+    <view class='go_buy' onTap='goShouyin'>
+       <text>去支付</text>
+    </view>
+</view>
+  <!-- end -->
+</view>
