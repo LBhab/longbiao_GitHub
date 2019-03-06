@@ -1,33 +1,43 @@
 <template>
       <div id="page">
-              <div id="content">
-                     <div class="aside">
-                         <div class="button" style="width:100%">
-                             <router-link to="/other">其他</router-link>
-                         </div>
-                     </div>
-                     <div class="box">
-                           <div class="header">
-                                  <!-- 按钮 -->
-                                  <div class="select" @click="change">切换</div>
-                                  <!-- 选择框架 -->
-                                  <div class="change" ref="change">
-                                      <div >change_one</div>
-                                      <div>change_two</div>
-                                      <div>change_three</div>
-                                  </div>
-                           </div>
-                           <div class="main">
-                                <router-view></router-view>
-                           </div>
-                           <div class="footer">
-                               <div ref="test" style="color:#fff ">sssss</div>
-                           </div>
-                     </div>
-              </div>
+            <div class="aside" >
+                <div class="slect" command='1' @click="changeColor(1)">皮肤1</div>
+                <div class="slect" command='2' @click="changeColor(2)">皮肤2</div>
+                <div class="slect" command='3' @click="changeColor(3)">皮肤3</div>
+            </div>
+            <div class="content">
+                  <div class="header">top</div>
+                  <div class="main">middle</div>
+            </div>
       </div>
 </template>
+<script>
+export default {
+      name:"bgcolor",
+      components:{},
+      data(){
+            return{}
+      },
+      watch:{},
+      computed:{},
+      methods:{
+           changeColor(data){
+                 console.log(data);
+                 //把className theme1，theme2，theme3挂载在app.vue的<div id="app"></div>上
+                 document.getElementById('app').className = 'theme'+data
+                 this.localStorage();
+           }, 
+           //存储localStoarge，用于进入系统时，记住用户上一次的选择，自动加载用户上一次选择的主题主题，记得在mounted()里面调用
+           localStorage(){
+                 localStorage.setItem('app',document.getElementById('app').className)
+           }
+      },
+      mounted(){
+            this.localStorage();
+      }
+}
+</script>
 <style lang="less" scoped>
-   @import url("./home.less");
+
 </style>
-<script src="./home.js"></script>
+

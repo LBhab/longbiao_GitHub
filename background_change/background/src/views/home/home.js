@@ -1,34 +1,37 @@
 export default {
+    name: 'background',
+    comments: {},
     data() {
         return {
-            show: true
+            path: ''
         }
     },
-    computed: {},
-    watch: {},
+    computed: {
+
+    },
+    watch: {
+
+    },
     methods: {
-        change() {
-            if (this.show) {
-                this.$refs.test.style.height = '50px';
-                this.$refs.test.style.background = "red";
-                this.$refs.test.style.position = "absolute";
-                this.$refs.test.style.top = "60px";
-                this.$refs.test.style.left = "0px";
-                this.$refs.test.style.transition = "all 2s";
-                this.show = false;
-            } else {
-                let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-                this.$refs.test.style.top = (h - 50) + "px";
-                // debugger
-                this.show = true;
-            }
+        changeColor(data) {
+            //let path = '';
+            // let themeLink = document.querySelector('link[name="test"]');
+            // themeLink.setAttribute('href', '../../assets/background/bg_one.less');
+            // switch (data) {
+            //     case '皮肤1':
+            //         require('../../assets/background/bg_one.less');
+            //         break;
+            //     case '皮肤2':
+            //         require('../../assets/background/bg_two.less');
+            //         break;
+            //     case '皮肤3':
+            //         require('../../assets/background/bg_three.less');
+            //         break;
+            // }
+        },
 
-
-
-
-        }
     },
     mounted() {
-
+        this.changeColor();
     },
 }

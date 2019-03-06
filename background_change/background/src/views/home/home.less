@@ -1,73 +1,36 @@
 div#page{
     height: 100%;
-    div#content{
-        height: 100%;
-        overflow: hidden;
-         div{
-             float: left;
-             width: 10%;
-             height: 100%;
-         }
-         div.aside{
-             background: dimgrey;
-         }
-       div.box{
-            width: 90% !important;
-            div{
-                width: 100% !important;
-            }
-            div.header{
-                height: 10%;  
-                background: gray;
-                position: relative;
-                div.select{
-                    position: absolute;
-                    height: 30px !important;
-                    width: 60px !important;
-                    top:15px;
-                    right: 10px;
-                    background: lightblue;
-                    border-radius: 5px 5px;
-                    cursor: pointer;
-                    text-align: center;
-                    line-height: 30px;
-                    color:#fff;
-                }
-                div.change{
-                    height: 300px !important;
-                    width: 100px !important;
-                    background: gary;
-                    position: absolute;
-                    right: 0px;
-                    top:80px;
-                }
-                div.change>div{
-                    height: 33.3% !important;
-                }
-                div.change>div:nth-child(1){
-                    background: red;
-                }
-                div.change>div:nth-child(2){
-                    background: green;
-                }
-                div.change>div:nth-child(3){
-                    background: black;
-                }
-                div.select:active{
-                    -webkit-box-shadow: 0 0 1px 1px blue;
-                    -moz-box-shadow: 0 0 1px 1px blue;
-                    -ms-box-shadow: 0 0 1px 1px blue;
-                    -o-box-shadow: 0 0 1px 1px blue;
-                    box-shadow: 0 0 1px 1px blue;
-                }
-            }
-            div.main{
-                height: 80%;
-            }
-            div.footer{
-                height: 10%;
-                background: gray;
-            }
-           }
-    }
+}
+div#page>div{
+    float: left;
+    width:20%;
+
+}
+div.aside{
+    height: 100%;
+    background: lightsalmon;
+}
+div.slect{
+    height: 50px;
+    width: 100px;
+    border:1px gray;
+    border-radius: 5px 5px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    background: red;
+    margin-bottom: 5px;
+    color: #fff;
+}
+div.content{
+    width:80% !important;
+    height: 100%;;
+}
+div.header{
+    height: 10%;
+    background: lightcyan;
+}
+div.main{
+    height: 90%;
+    background: lightgreen;
 }

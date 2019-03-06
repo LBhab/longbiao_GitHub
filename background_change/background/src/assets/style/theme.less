@@ -1,0 +1,40 @@
+@import url('../../views/home/home.less');//默认样式
+.theme(@backcolor:red,@fcolor:green,@primaryColro:white,@btnColr:blue)//方法带参
+{
+    div#page{
+        // height: 100%;
+    }
+    div#page>div{
+        // float: left;
+        // width:20%;
+    
+    }
+    div.aside{
+        // height: 100%;
+        background: @backcolor;
+    }
+    div.slect{
+        // height: 50px;
+        // width: 100px;
+        border:1px @backcolor;
+        // border-radius: 5px 5px;
+        // text-align: center;
+        // line-height: 50px;
+        // cursor: pointer;
+        background: @backcolor;
+        // margin-bottom: 5px;
+        // color: #fff;
+    }
+    div.content{
+        // width:80% !important;
+        // height: 100%;;
+    }
+    div.header{
+        // height: 10%;
+        background: @fcolor;
+    }
+    div.main{
+        // height: 90%;
+        background: @btnColr;
+    }
+}
